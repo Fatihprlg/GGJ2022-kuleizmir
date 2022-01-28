@@ -21,6 +21,8 @@ public class Player1Controller : MonoBehaviour
     Rigidbody rb;
 
     public GameObject ExplosionArea;
+    public GameObject FreezeArea;
+    GameObject Freeze;
 
 
     void Awake()
@@ -31,6 +33,8 @@ public class Player1Controller : MonoBehaviour
         playerInputs.Player1.Jump.performed += ctx => Jump();
         playerInputs.Player1.Explosion.performed += ctx => spawnExplosion();
         playerInputs.Player1.Explosion.canceled += ctx => destroyExplosion();
+        playerInputs.Player1.Skills.performed += ctx => spawnFreeze();
+        playerInputs.Player1.Skills.canceled += ctx => destroyFreeze(); 
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
@@ -112,12 +116,26 @@ public class Player1Controller : MonoBehaviour
     void spawnExplosion()
     {
         canMove = false;
-        GameObject Explosion = Instantiate(ExplosionArea, transform.position, Quaternion.identity);
+        GameObject Explosion = Instantiate(ExplosionArea, transform.position + new Vector3(0,.2f,0), Quaternion.identity);
         Explosion.transform.parent = transform;
     }
     void destroyExplosion()
     {
-        GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
+        Destroy(transform.GetChild(0).gameObject);
+        //GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
+        canMove = true;
+    }
+    void spawnFreeze()
+    {
+        canMove = false;
+        Freeze = Instantiate(FreezeArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
+        Freeze.transform.parent = transform;
+    }
+    void destroyFreeze()
+    {
+        //this.Freeze.GetComponent<Freeze>().DestroyObject();
+        Destroy(transform.GetChild(0).gameObject);
+        //GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
         canMove = true;
     }
     void Death()

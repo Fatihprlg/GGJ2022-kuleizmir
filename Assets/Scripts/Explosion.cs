@@ -6,7 +6,7 @@ public class Explosion : MonoBehaviour
 {
     SphereCollider ExplosionCol;
     public bool Destroyed = false;
-    public float maxSize = 0.4f;
+    public float maxSize = 0.8f;
     List<GameObject> DestroyableObjects = new List<GameObject>();
 
     private void Awake()
@@ -17,7 +17,12 @@ public class Explosion : MonoBehaviour
     {
         if (transform.localScale.x < maxSize)
         {
-            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f) * Time.deltaTime;
+            transform.localScale += new Vector3(0.3f, 0, 0.3f) * Time.deltaTime;
+            
+        }
+        if (ExplosionCol.radius <= 2.5f)
+        {
+            ExplosionCol.radius += .1f;
         }
         if (Destroyed)
         {
@@ -27,19 +32,20 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Destroyable"))
+        if (other.CompareTag("Interactable"))
         {
-            GameObject box = other.GetComponent<BoxScript>().gameObject;
+            GameObject box = other.gameObject;
             DestroyableObjects.Add(box);
-            Debug.Log("added to List");
         }
     }
 
     private void OnDestroy()
     {
+        Debug.Log("asndkl");
         foreach(GameObject destroyablebox in DestroyableObjects)
         {
-            destroyablebox.GetComponent<BoxScript>().Destroy();
+            destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(300,transform.position,5, 3.0f, ForceMode.Force);
+           // Destroy(destroyablebox);
         }
     }
 }
