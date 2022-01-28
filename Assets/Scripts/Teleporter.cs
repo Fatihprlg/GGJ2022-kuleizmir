@@ -12,6 +12,7 @@ public class Teleporter : MonoBehaviour
             player = other.GetComponent<Player1Controller>();
             player.transform.position = otherPortal.transform.position;
             StartCoroutine(PortalWaitTime());
+            Player1Controller.isTeleporting = false;
     }
 
     IEnumerator PortalWaitTime()
