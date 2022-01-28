@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    Player1Controller player;
+    //Player1Controller player;
     public GameObject otherPortal;
 
     private void OnTriggerExit(Collider other)
     {
-            player = other.GetComponent<Player1Controller>();
-            player.transform.position = otherPortal.transform.position;
+        //player = other.GetComponent<Player1Controller>();
+        if (other.CompareTag("Player1") || other.CompareTag("Player"))
+        {
+            other.transform.position = otherPortal.transform.position;
             StartCoroutine(PortalWaitTime());
-            Player1Controller.isTeleporting = false;
+            //Player1Controller.isTeleporting = false;
+        }
     }
 
     IEnumerator PortalWaitTime()
