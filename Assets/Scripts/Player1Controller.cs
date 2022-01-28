@@ -12,11 +12,14 @@ public class Player1Controller : MonoBehaviour
     float horizontal, vertical;
     public float movementSpeed = 16f;
     bool canJump = true;
+    bool canMove = true;
     public static bool isTeleporting = false;
 
 
     Animator animator;
     Rigidbody rb;
+
+    public GameObject ExplosionArea;
 
 
     void Awake()
@@ -25,6 +28,8 @@ public class Player1Controller : MonoBehaviour
         playerInputs.Player1.Move.performed += ctx => movementDirection = ctx.ReadValue<Vector2>();
         playerInputs.Player1.Move.canceled += ctx => movementDirection = Vector2.zero;
         playerInputs.Player1.Jump.performed += ctx => Jump();
+        playerInputs.Player1.Explosion.performed += ctx => spawnExplosion();
+        playerInputs.Player1.Explosion.canceled += ctx => destroyExplosion();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
@@ -45,6 +50,7 @@ public class Player1Controller : MonoBehaviour
         {
             Death();
         }
+        if (canMove)
         Movement();
     }
 
@@ -100,6 +106,18 @@ public class Player1Controller : MonoBehaviour
             rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
             canJump = false;
         }
+    }
+
+    void spawnExplosion()
+    {
+        canMove = false;
+        GameObject Explosion = Instantiate(ExplosionArea, transform.position, Quaternion.identity);
+        Explosion.transform.parent = transform;
+    }
+    void destroyExplosion()
+    {
+        GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
+        canMove = true;
     }
     void Death()
     {

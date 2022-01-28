@@ -41,6 +41,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Explosion"",
+                    ""type"": ""Button"",
+                    ""id"": ""882a27ce-3b16-4be9-9fde-c8e3742594b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -120,6 +128,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""157a7975-e6fb-428a-a3a5-40c72083fe91"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Explosion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -131,6 +150,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Skills = m_Player1.FindAction("Skills", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
+        m_Player1_Explosion = m_Player1.FindAction("Explosion", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,6 +203,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Skills;
     private readonly InputAction m_Player1_Jump;
+    private readonly InputAction m_Player1_Explosion;
     public struct Player1Actions
     {
         private @PlayerControls m_Wrapper;
@@ -190,6 +211,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Skills => m_Wrapper.m_Player1_Skills;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
+        public InputAction @Explosion => m_Wrapper.m_Player1_Explosion;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -208,6 +230,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
+                @Explosion.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
+                @Explosion.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
+                @Explosion.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -221,6 +246,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Explosion.started += instance.OnExplosion;
+                @Explosion.performed += instance.OnExplosion;
+                @Explosion.canceled += instance.OnExplosion;
             }
         }
     }
@@ -230,5 +258,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnSkills(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnExplosion(InputAction.CallbackContext context);
     }
 }

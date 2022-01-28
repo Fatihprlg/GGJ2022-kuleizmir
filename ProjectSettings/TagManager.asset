@@ -8,6 +8,8 @@ TagManager:
   - PositiveSide
   - NegativeSide
   - Portal
+  - Destroyable
+  - Explosion
   layers:
   - Default
   - TransparentFX
