@@ -12,6 +12,8 @@ public class Player1Controller : MonoBehaviour
     float horizontal, vertical;
     public float movementSpeed = 16f;
     bool canJump = true;
+    public static bool isTeleporting = false;
+
 
     Animator animator;
     Rigidbody rb;
@@ -49,24 +51,38 @@ public class Player1Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PositiveGround"))
+        if (other.CompareTag("Portal"))
         {
-            animator.SetBool("Smaller", true);
-            animator.SetBool("Bigger", false);
-
+            isTeleporting = true;
         }
-        else if (other.CompareTag("NegativeGround"))
+
+        if (other.CompareTag("PositiveSide"))
         {
-            animator.SetBool("Smaller", false);
-            animator.SetBool("Bigger", true);
+            if (!isTeleporting)
+            {
+                animator.SetBool("Smaller", true);
+                animator.SetBool("Bigger", false);
+            }
+          
+        }
+        else if (other.CompareTag("NegativeSide"))
+        {
+            if (!isTeleporting)
+            {
+                animator.SetBool("Smaller", false);
+                animator.SetBool("Bigger", true);
+            }
+           
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             canJump = true;
         }
+
     }
 
     void Movement()
