@@ -11,6 +11,11 @@ TagManager:
   - Destroyable
   - Explosion
   - Interactable
+  - Freeze
+  - Freezable
+  - Portable
+  - collector
+  - Player1
   layers:
   - Default
   - TransparentFX

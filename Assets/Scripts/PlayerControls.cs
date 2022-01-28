@@ -21,7 +21,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""2c11926c-aeb0-46a2-b434-f2bed1234fa7"",
+                    ""id"": ""11bac210-694a-45c8-a14d-dbd840fcee90"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -35,17 +35,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""Take"",
                     ""type"": ""Button"",
-                    ""id"": ""f8fd418b-af0f-4d0c-8a98-d5cf670fffab"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Explosion"",
-                    ""type"": ""Button"",
-                    ""id"": ""882a27ce-3b16-4be9-9fde-c8e3742594b7"",
+                    ""id"": ""5adc40c0-e253-45e9-8e0e-08a866d6a29b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -54,18 +46,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""c56286c1-8ff5-4a68-a194-6db45ae80f83"",
+                    ""id"": ""a6d3e91b-b671-423d-87a3-d558e316c8e6"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Skills"",
+                    ""action"": ""Take"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""Horizontal"",
-                    ""id"": ""81bad18d-affd-402c-a871-36a41289547e"",
+                    ""id"": ""3a1c2f45-f8e9-4611-a241-f1537261a518"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -76,7 +68,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Up"",
-                    ""id"": ""af60014f-12f1-4c09-a0b5-423e22241c6d"",
+                    ""id"": ""ac327a41-4ffd-4652-8617-6dc005758849"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -87,7 +79,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Down"",
-                    ""id"": ""548af697-ecac-46f7-a4bd-7d6b17f16de0"",
+                    ""id"": ""26cea32f-9b91-4d61-8022-b86b9a3f6cb2"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -98,7 +90,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Left"",
-                    ""id"": ""f3c45bc4-4e66-401f-967a-52d7cb022209"",
+                    ""id"": ""a2ed843d-4e9a-4685-a866-ca7eefbbba2f"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -109,7 +101,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Right"",
-                    ""id"": ""4f39d0b6-55c6-4b88-ad06-9a2ebba1a3fe"",
+                    ""id"": ""289d20ba-3b00-42e2-92fd-aa702fb6cd34"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -120,23 +112,77 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""43656f94-bbb0-488a-bab9-f4a8d3195e29"",
+                    ""id"": ""c56286c1-8ff5-4a68-a194-6db45ae80f83"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""Skills"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player2"",
+            ""id"": ""56cdc462-20a6-4937-b581-9d9360bb6d28"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""55fda6e6-9a5a-4f76-8ec5-23b8c3845f70"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Skill"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c37300c-3e99-48b5-9ea0-343bbc23bb03"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Take"",
+                    ""type"": ""Button"",
+                    ""id"": ""44b826c8-03e8-4caf-8cf3-a675c904a9a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f06111f9-ffdf-4a98-a417-f83d0c5dc08f"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""157a7975-e6fb-428a-a3a5-40c72083fe91"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""id"": ""e9959f6b-56a9-4ae3-9b24-d7979240ee43"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Explosion"",
+                    ""action"": ""Skill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97bbd3e3-5115-4acd-ad40-b131ddcd1090"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Take"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -149,8 +195,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Skills = m_Player1.FindAction("Skills", throwIfNotFound: true);
-        m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
-        m_Player1_Explosion = m_Player1.FindAction("Explosion", throwIfNotFound: true);
+        m_Player1_Take = m_Player1.FindAction("Take", throwIfNotFound: true);
+        // Player2
+        m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
+        m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
+        m_Player2_Skill = m_Player2.FindAction("Skill", throwIfNotFound: true);
+        m_Player2_Take = m_Player2.FindAction("Take", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -202,16 +252,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Skills;
-    private readonly InputAction m_Player1_Jump;
-    private readonly InputAction m_Player1_Explosion;
+    private readonly InputAction m_Player1_Take;
     public struct Player1Actions
     {
         private @PlayerControls m_Wrapper;
         public Player1Actions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Skills => m_Wrapper.m_Player1_Skills;
-        public InputAction @Jump => m_Wrapper.m_Player1_Jump;
-        public InputAction @Explosion => m_Wrapper.m_Player1_Explosion;
+        public InputAction @Take => m_Wrapper.m_Player1_Take;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -227,12 +275,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Skills.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnSkills;
                 @Skills.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnSkills;
                 @Skills.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnSkills;
-                @Jump.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
-                @Explosion.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
-                @Explosion.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
-                @Explosion.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnExplosion;
+                @Take.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnTake;
+                @Take.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnTake;
+                @Take.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnTake;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -243,21 +288,72 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Skills.started += instance.OnSkills;
                 @Skills.performed += instance.OnSkills;
                 @Skills.canceled += instance.OnSkills;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
-                @Explosion.started += instance.OnExplosion;
-                @Explosion.performed += instance.OnExplosion;
-                @Explosion.canceled += instance.OnExplosion;
+                @Take.started += instance.OnTake;
+                @Take.performed += instance.OnTake;
+                @Take.canceled += instance.OnTake;
             }
         }
     }
     public Player1Actions @Player1 => new Player1Actions(this);
+
+    // Player2
+    private readonly InputActionMap m_Player2;
+    private IPlayer2Actions m_Player2ActionsCallbackInterface;
+    private readonly InputAction m_Player2_Move;
+    private readonly InputAction m_Player2_Skill;
+    private readonly InputAction m_Player2_Take;
+    public struct Player2Actions
+    {
+        private @PlayerControls m_Wrapper;
+        public Player2Actions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player2_Move;
+        public InputAction @Skill => m_Wrapper.m_Player2_Skill;
+        public InputAction @Take => m_Wrapper.m_Player2_Take;
+        public InputActionMap Get() { return m_Wrapper.m_Player2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2Actions instance)
+        {
+            if (m_Wrapper.m_Player2ActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMove;
+                @Skill.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnSkill;
+                @Skill.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnSkill;
+                @Skill.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnSkill;
+                @Take.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnTake;
+                @Take.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnTake;
+                @Take.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnTake;
+            }
+            m_Wrapper.m_Player2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Skill.started += instance.OnSkill;
+                @Skill.performed += instance.OnSkill;
+                @Skill.canceled += instance.OnSkill;
+                @Take.started += instance.OnTake;
+                @Take.performed += instance.OnTake;
+                @Take.canceled += instance.OnTake;
+            }
+        }
+    }
+    public Player2Actions @Player2 => new Player2Actions(this);
     public interface IPlayer1Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSkills(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnExplosion(InputAction.CallbackContext context);
+        void OnTake(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2Actions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnSkill(InputAction.CallbackContext context);
+        void OnTake(InputAction.CallbackContext context);
     }
 }
