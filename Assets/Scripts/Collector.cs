@@ -33,16 +33,17 @@ public class Collector : MonoBehaviour
         if (take && (other.CompareTag("Portable") || other.CompareTag("NegativeKey")) && transform.childCount == 0)
         {
             other.transform.parent = transform;
-            other.transform.localPosition = new Vector3(0, 0, 1);
+            if(other.CompareTag("NegativeKey"))
+                other.transform.localPosition = new Vector3(0, .5f, 2);
+            else
+                other.transform.localPosition = new Vector3(0, 0, 1);
+
         }
         else if (!take)
         {
+            //other.transform.parent.SetParent(null);
             transform.DetachChildren();
         }
     }
 }
-public enum Players
-{
-    Player1,
-    Player2
-}
+
