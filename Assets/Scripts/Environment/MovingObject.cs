@@ -12,8 +12,8 @@ public class MovingObject : MonoBehaviour
     bool direction = false;
     int distCount = 0;
     Vector3 distance;
-    bool canMove;
-    float speedMultiplier = 1;
+    bool canMove = true;
+    float speedMultiplier = 10;
 
 
     // Start is called before the first frame update
@@ -106,7 +106,7 @@ public class MovingObject : MonoBehaviour
             script.canMove = GUILayout.Toggle(script.canMove, "Can Move");
             GUILayout.Label("Speed");
             
-            script.speedMultiplier = GUILayout.HorizontalSlider(script.speedMultiplier, 0.1f, 10f);
+            script.speedMultiplier = GUILayout.HorizontalSlider(script.speedMultiplier, 0.1f, 15f);
             GUILayout.Space(20);
         }
     }
