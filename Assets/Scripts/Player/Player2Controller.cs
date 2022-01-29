@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Player1Controller : MonoBehaviour
+public class Player2Controller : MonoBehaviour
 {
     PlayerControls playerInputs;
     Vector2 movementDirection;
@@ -18,21 +17,19 @@ public class Player1Controller : MonoBehaviour
     Animator animator;
     Rigidbody rb;
 
-    public GameObject FreezeArea;
+    public GameObject ExplosionArea;
     GameObject Freeze;
-
-
+    // Start is called before the first frame update
     void Awake()
     {
         playerInputs = new PlayerControls();
-        playerInputs.Player1.Move.performed += ctx => movementDirection = ctx.ReadValue<Vector2>();
-        playerInputs.Player1.Move.canceled += ctx => movementDirection = Vector2.zero;
-        playerInputs.Player1.Skills.performed += ctx => spawnFreeze();
-        playerInputs.Player1.Skills.canceled += ctx => destroyFreeze(); 
+        playerInputs.Player2.Move.performed += ctx => movementDirection = ctx.ReadValue<Vector2>();
+        playerInputs.Player2.Move.canceled += ctx => movementDirection = Vector2.zero;
+        playerInputs.Player2.Skill.performed += ctx => spawnExplosion();
+        playerInputs.Player2.Skill.canceled += ctx => destroyExplosion();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
-
     private void OnEnable()
     {
         playerInputs.Enable();
@@ -42,7 +39,7 @@ public class Player1Controller : MonoBehaviour
     {
         playerInputs.Disable();
     }
-
+    // Update is called once per frame
     void Update()
     {
         if (transform.localScale.x <= minScale.x)
@@ -50,9 +47,8 @@ public class Player1Controller : MonoBehaviour
             Death();
         }
         if (canMove)
-        Movement();
+            Movement();
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -62,26 +58,28 @@ public class Player1Controller : MonoBehaviour
         }
         if (other.CompareTag("Portal"))
         {
-            StartCoroutine(PortalTeleportTime());
+            isTeleporting = true;
         }
-
-        if (other.CompareTag("PositiveSide"))
+        if (!isTeleporting)
         {
-            if (!isTeleporting)
+            if (other.CompareTag("NegativeSide"))
             {
+
                 animator.SetBool("Smaller", true);
                 animator.SetBool("Bigger", false);
+
             }
-          
-        }
-        else if (other.CompareTag("NegativeSide"))
-        {
-            if (!isTeleporting)
+            else if (other.CompareTag("PositiveSide"))
             {
+
                 animator.SetBool("Smaller", false);
                 animator.SetBool("Bigger", true);
             }
-           
+        }
+        if (other.CompareTag("PositiveFinish"))
+        {
+            Debug.Log("positivegone gone");
+            GameController.positiveIsFinished = true;
         }
     }
 
@@ -93,15 +91,14 @@ public class Player1Controller : MonoBehaviour
 
     }
 
-    void spawnFreeze()
+    void spawnExplosion()
     {
         canMove = false;
-        Freeze = Instantiate(FreezeArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
-        Freeze.transform.parent = transform;
+        GameObject Explosion = Instantiate(ExplosionArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
+        Explosion.transform.parent = transform;
     }
-    void destroyFreeze()
+    void destroyExplosion()
     {
-        //this.Freeze.GetComponent<Freeze>().DestroyObject();
         Destroy(transform.GetChild(1).gameObject);
         //GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
         canMove = true;
@@ -111,13 +108,4 @@ public class Player1Controller : MonoBehaviour
         GameObject.Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    IEnumerator PortalTeleportTime()
-    {
-        isTeleporting = true;
-        yield return new WaitForSeconds(0.2f);
-        isTeleporting = false;
-    }
-
-
 }

@@ -13,6 +13,8 @@ public class MovingObject : MonoBehaviour
     int distCount = 0;
     Vector3 distance;
     bool canMove;
+    float speedMultiplier = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,7 @@ public class MovingObject : MonoBehaviour
             distanceCtrl = false;
         }
         float dist = Vector3.Distance(transform.position, positions[distCount].transform.position);
-        transform.position += distance * Time.deltaTime;
+        transform.position += distance * Time.deltaTime * speedMultiplier;
         if (dist < 0.5f)
         {
             distanceCtrl = true;
@@ -65,6 +67,8 @@ public class MovingObject : MonoBehaviour
 
     }
 
+   
+
 #if UNITY_EDITOR
 
     void OnDrawGizmos()
@@ -87,6 +91,7 @@ public class MovingObject : MonoBehaviour
     [System.Serializable]
     class MovingObjectEditor : Editor
     {
+
         public override void OnInspectorGUI()
         {
             MovingObject script = (MovingObject)target; //yukaridaki classa erisim
@@ -97,8 +102,12 @@ public class MovingObject : MonoBehaviour
                 newObject.transform.position = script.transform.position;
                 newObject.name = script.transform.childCount.ToString();
             }
+            
             script.canMove = GUILayout.Toggle(script.canMove, "Can Move");
-
+            GUILayout.Label("Speed");
+            
+            script.speedMultiplier = GUILayout.HorizontalSlider(script.speedMultiplier, 0.1f, 10f);
+            GUILayout.Space(20);
         }
     }
 #endif
