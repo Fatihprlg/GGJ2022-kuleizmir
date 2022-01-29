@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Collector : MonoBehaviour
+public class Collector : MonoBehaviour
 {
+   
+    public Players player;
     PlayerControls playerInputs;
     bool take = false;
 
@@ -11,8 +13,10 @@ public class Player2Collector : MonoBehaviour
     private void Awake()
     {
         playerInputs = new PlayerControls();
-        playerInputs.Player2.Take.performed += ctx => take = !take;
-
+        if(player == Players.Player2)
+            playerInputs.Player2.Take.performed += ctx => take = !take;
+        else if(player == Players.Player1)
+            playerInputs.Player1.Take.performed += ctx => take = !take;
     }
     private void OnEnable()
     {
@@ -26,7 +30,7 @@ public class Player2Collector : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (take && other.CompareTag("Portable") && transform.childCount == 0)
+        if (take && (other.CompareTag("Portable") || other.CompareTag("NegativeKey")) && transform.childCount == 0)
         {
             other.transform.parent = transform;
             other.transform.localPosition = new Vector3(0, 0, 1);
@@ -36,4 +40,9 @@ public class Player2Collector : MonoBehaviour
             transform.DetachChildren();
         }
     }
+}
+public enum Players
+{
+    Player1,
+    Player2
 }
