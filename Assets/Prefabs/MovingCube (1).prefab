@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1701725634628459256}
   - component: {fileID: 1701725634628459257}
   - component: {fileID: 1701725634628459262}
+  - component: {fileID: 6265106863352703912}
   m_Layer: 0
   m_Name: MovingCube (1)
   m_TagString: Portable
@@ -55,7 +56,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -111,6 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9eb4442d67b784d9c7bff825eaf234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6265106863352703912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701725634628459263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81252fef2b0d61c48bea5bae89c6d413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFrozen: 0
 --- !u!1 &1701725635183592179
 GameObject:
   m_ObjectHideFlags: 0

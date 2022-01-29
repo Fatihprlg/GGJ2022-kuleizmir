@@ -21,10 +21,10 @@ public class Freeze : MonoBehaviour
             transform.localScale += new Vector3(0.1f, 0, 0.1f) * Time.deltaTime;
 
         }
-        /*if (FreezeCol.radius <= 2.5f)
+        if (FreezeCol.radius <= 5f)
         {
-            FreezeCol.radius += .1f;
-        }*/
+            FreezeCol.radius += .01f;
+        }
         if (Destroyed)
         {
             Destroy(gameObject);
@@ -44,6 +44,11 @@ public class Freeze : MonoBehaviour
     {
         foreach (var obj in Freezable)
         {
+            StopMovingObjects frezescript = obj.GetComponent<StopMovingObjects>();
+            if(frezescript != null)
+            {
+                frezescript.isFrozen = true;
+            }
             if(obj.GetComponent<FrostObject>() == null)
                 obj.AddComponent<FrostObject>();
         }
