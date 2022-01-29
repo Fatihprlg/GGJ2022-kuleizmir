@@ -16,6 +16,10 @@ TagManager:
   - Portable
   - collector
   - Player1
+  - NegativeKey
+  - NegativePlug
+  - PositiveKey
+  - PositivePlug
   layers:
   - Default
   - TransparentFX
