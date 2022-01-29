@@ -316,10 +316,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8660743548890531076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4510064e0425b4f95ddcdaa4ee839f, type: 3}
+  m_Script: {fileID: 11500000, guid: da15e8e622934f849a801d7676c36be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plug: {fileID: 5136569569648949250}
-  key: {fileID: 6253298599969034729}
-  keyType: 1
-  speed: 0.1
+  plug: {fileID: 0}
+  key: {fileID: 0}
+  keyType: 0
+  speed: 8
+  plugged: 0

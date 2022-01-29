@@ -8,20 +8,56 @@ public class Teleporter : MonoBehaviour
     public GameObject otherPortal;
     public Vector3 offset;
     public bool isGreen;
+    public bool isCommon;
+    public bool isRed;
+    public bool isBlue;
 
     private void OnTriggerEnter(Collider other)
     {
-        //player = other.GetComponent<Player1Controller>();
-        if (other.CompareTag("Player1") || other.CompareTag("Player"))
+        if (isCommon)
         {
-            if (isGreen)
+            //player = other.GetComponent<Player1Controller>();
+            if (other.CompareTag("Player1") || other.CompareTag("Player"))
             {
-                other.transform.GetChild(0).DetachChildren();
-                Collector.take = false;
+                if (isGreen)
+                {
+                    other.transform.GetChild(0).DetachChildren();
+                    Collector.take = false;
+                }
+                other.transform.position = otherPortal.transform.position + offset;
+                StartCoroutine(PortalWaitTime());
+                //Player1Controller.isTeleporting = false;
             }
-            other.transform.position = otherPortal.transform.position + offset;
-            StartCoroutine(PortalWaitTime());
-            //Player1Controller.isTeleporting = false;
+        }
+        if (isBlue)
+        {
+            //player = other.GetComponent<Player1Controller>();
+            if (other.CompareTag("Player") )
+            {
+                if (isGreen)
+                {
+                    other.transform.GetChild(0).DetachChildren();
+                    Collector.take = false;
+                }
+                other.transform.position = otherPortal.transform.position + offset;
+                StartCoroutine(PortalWaitTime());
+                //Player1Controller.isTeleporting = false;
+            }
+        }
+        if (isRed)
+        {
+            //player = other.GetComponent<Player1Controller>();
+            if (other.CompareTag("Player1"))
+            {
+                if (isGreen)
+                {
+                    other.transform.GetChild(0).DetachChildren();
+                    Collector.take = false;
+                }
+                other.transform.position = otherPortal.transform.position + offset;
+                StartCoroutine(PortalWaitTime());
+                //Player1Controller.isTeleporting = false;
+            }
         }
     }
 
