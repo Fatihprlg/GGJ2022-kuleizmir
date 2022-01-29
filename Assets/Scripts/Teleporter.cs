@@ -6,13 +6,14 @@ public class Teleporter : MonoBehaviour
 {
     //Player1Controller player;
     public GameObject otherPortal;
+    public Vector3 offset;
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //player = other.GetComponent<Player1Controller>();
         if (other.CompareTag("Player1") || other.CompareTag("Player"))
         {
-            other.transform.position = otherPortal.transform.position;
+            other.transform.position = otherPortal.transform.position + offset;
             StartCoroutine(PortalWaitTime());
             //Player1Controller.isTeleporting = false;
         }
