@@ -8,7 +8,6 @@ TagManager:
   - PositiveSide
   - NegativeSide
   - Portal
-  - Destroyable
   - Explosion
   - Interactable
   - Freeze
@@ -20,6 +19,7 @@ TagManager:
   - NegativePlug
   - PositiveKey
   - PositivePlug
+  - KillBox
   layers:
   - Default
   - TransparentFX
