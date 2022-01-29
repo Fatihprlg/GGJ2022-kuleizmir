@@ -30,14 +30,13 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (take && (other.CompareTag("Portable") || other.CompareTag("NegativeKey")) && transform.childCount == 0)
+        if (take && (other.CompareTag("Portable") || other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey")) && transform.childCount == 0)
         {
             other.transform.parent = transform;
-            if(other.CompareTag("NegativeKey"))
+            if(other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
                 other.transform.localPosition = new Vector3(0, .5f, 2);
             else
                 other.transform.localPosition = new Vector3(0, 0, 1);
-
         }
         else if (!take)
         {
