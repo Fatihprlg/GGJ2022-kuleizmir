@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Player2Controller : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 {
     PlayerControls playerInputs;
     Vector2 movementDirection;
@@ -17,19 +18,21 @@ public class Player2Controller : MonoBehaviour
     Animator animator;
     Rigidbody rb;
 
-    public GameObject ExplosionArea;
+    public GameObject FreezeArea;
     GameObject Freeze;
-    // Start is called before the first frame update
+
+
     void Awake()
     {
         playerInputs = new PlayerControls();
-        playerInputs.Player2.Move.performed += ctx => movementDirection = ctx.ReadValue<Vector2>();
-        playerInputs.Player2.Move.canceled += ctx => movementDirection = Vector2.zero;
-        playerInputs.Player2.Skill.performed += ctx => spawnExplosion();
-        playerInputs.Player2.Skill.canceled += ctx => destroyExplosion();
+        playerInputs.Player1.Move.performed += ctx => movementDirection = ctx.ReadValue<Vector2>();
+        playerInputs.Player1.Move.canceled += ctx => movementDirection = Vector2.zero;
+        playerInputs.Player1.Skills.performed += ctx => spawnFreeze();
+        playerInputs.Player1.Skills.canceled += ctx => destroyFreeze();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
+
     private void OnEnable()
     {
         playerInputs.Enable();
@@ -39,7 +42,7 @@ public class Player2Controller : MonoBehaviour
     {
         playerInputs.Disable();
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (transform.localScale.x <= minScale.x)
@@ -50,6 +53,7 @@ public class Player2Controller : MonoBehaviour
             Movement();
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("KillBox"))
@@ -58,26 +62,25 @@ public class Player2Controller : MonoBehaviour
         }
         if (other.CompareTag("Portal"))
         {
-            isTeleporting = true;
+            StartCoroutine(PortalTeleportTime());
         }
-
-        if (other.CompareTag("NegativeSide"))
+        if (!isTeleporting)
         {
-            if (!isTeleporting)
+            if (other.CompareTag("PositiveSide"))
             {
                 animator.SetBool("Smaller", true);
                 animator.SetBool("Bigger", false);
             }
-
-        }
-        else if (other.CompareTag("PositiveSide"))
-        {
-            if (!isTeleporting)
+            else if (other.CompareTag("NegativeSide"))
             {
                 animator.SetBool("Smaller", false);
                 animator.SetBool("Bigger", true);
             }
-
+        }
+        if (other.CompareTag("NegativeFinish"))
+        {
+            Debug.Log("negative gone");
+            GameController.negativeIsFinished = true;
         }
     }
 
@@ -86,17 +89,17 @@ public class Player2Controller : MonoBehaviour
         horizontal = movementDirection.x * Time.deltaTime * movementSpeed;
         vertical = movementDirection.y * Time.deltaTime * movementSpeed;
         transform.position += new Vector3(horizontal, 0, vertical);
-
     }
 
-    void spawnExplosion()
+    void spawnFreeze()
     {
         canMove = false;
-        GameObject Explosion = Instantiate(ExplosionArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
-        Explosion.transform.parent = transform;
+        Freeze = Instantiate(FreezeArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
+        Freeze.transform.parent = transform;
     }
-    void destroyExplosion()
+    void destroyFreeze()
     {
+        //this.Freeze.GetComponent<Freeze>().DestroyObject();
         Destroy(transform.GetChild(1).gameObject);
         //GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
         canMove = true;
@@ -106,4 +109,13 @@ public class Player2Controller : MonoBehaviour
         GameObject.Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    IEnumerator PortalTeleportTime()
+    {
+        isTeleporting = true;
+        yield return new WaitForSeconds(0.2f);
+        isTeleporting = false;
+    }
+
+
 }

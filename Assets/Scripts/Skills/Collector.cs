@@ -32,9 +32,15 @@ public class Collector : MonoBehaviour
     {
         if (take && (other.CompareTag("Portable") || other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey")) && transform.childCount == 0)
         {
+            Debug.Log(player);
             other.transform.parent = transform;
-            if(other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
+
+
+            if (other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
+            { 
                 other.transform.localPosition = new Vector3(0, .5f, 2);
+                other.GetComponent<Rigidbody>().isKinematic = true;
+            }
             else
                 other.transform.localPosition = new Vector3(0, 0, 1);
         }
