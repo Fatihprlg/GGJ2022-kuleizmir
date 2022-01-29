@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
     public Keys keyType;
     bool isGoing = false;
     public float speed = 8;
+    public bool plugged = false;
 
     private void OnTriggerStay(Collider other)
     {
@@ -16,7 +17,6 @@ public class Key : MonoBehaviour
         if (key.transform.parent == null)
             if (keyType == Keys.NegativeKey)
             {
-                Debug.Log(key.transform.parent == null);
                 if (other.CompareTag("NegativePlug"))
                 {
                     Debug.LogError(plug.transform.position);
@@ -44,12 +44,13 @@ public class Key : MonoBehaviour
         if (isGoing)
         {
             key.transform.localPosition = Vector3.MoveTowards(key.transform.localPosition, Vector3.zero, speed * Time.deltaTime);
-            Debug.Log(key.transform.localPosition);
+            
         }
         if (key.transform.localPosition.Equals(Vector3.zero))
         {
+            plugged = true;
             isGoing = false;
-            Destroy(this.gameObject);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
