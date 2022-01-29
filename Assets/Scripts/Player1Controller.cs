@@ -62,7 +62,7 @@ public class Player1Controller : MonoBehaviour
         }
         if (other.CompareTag("Portal"))
         {
-            isTeleporting = true;
+            StartCoroutine(PortalTeleportTime());
         }
 
         if (other.CompareTag("PositiveSide"))
@@ -112,6 +112,12 @@ public class Player1Controller : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    IEnumerator PortalTeleportTime()
+    {
+        isTeleporting = true;
+        yield return new WaitForSeconds(0.2f);
+        isTeleporting = false;
+    }
 
 
 }

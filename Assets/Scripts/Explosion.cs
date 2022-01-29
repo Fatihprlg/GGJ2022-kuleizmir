@@ -20,9 +20,9 @@ public class Explosion : MonoBehaviour
             transform.localScale += new Vector3(0.3f, 0, 0.3f) * Time.deltaTime;
             
         }
-        if (ExplosionCol.radius <= 2.5f)
+        if (ExplosionCol.radius <= 5f)
         {
-            ExplosionCol.radius += .1f;
+            ExplosionCol.radius += .01f;
         }
         if (Destroyed)
         {
@@ -41,10 +41,23 @@ public class Explosion : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("asndkl");
         foreach(GameObject destroyablebox in DestroyableObjects)
         {
-            destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(300,transform.position,5, 3.0f, ForceMode.Force);
+            if (ExplosionCol.radius < 5f)
+            {
+                destroyablebox.transform.DetachChildren();
+                Destroy(destroyablebox);
+            }
+            else if (ExplosionCol.radius >= 5f)
+            {
+                if (destroyablebox.GetComponent<Rigidbody>().mass > 1 && destroyablebox.GetComponent<Rigidbody>().constraints == RigidbodyConstraints.FreezeAll)
+                {
+                    destroyablebox.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(300, transform.position, 5, 3.0f, ForceMode.Force);
+                }
+                else return;
+                Destroy(destroyablebox, 3f);
+            }
            // Destroy(destroyablebox);
         }
     }
