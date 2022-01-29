@@ -83,10 +83,10 @@ AnimatorStateMachine:
     m_Position: {x: 500, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6748851128167178583}
-    m_Position: {x: 320, y: 140, z: 0}
+    m_Position: {x: 510, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -35422871917098207}
-    m_Position: {x: 340, y: 140, z: 0}
+    m_Position: {x: 240, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3864279555965524184}
     m_Position: {x: 280, y: 30, z: 0}
@@ -108,7 +108,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerSpawn
-  m_Speed: 1
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6843471944501598420}
@@ -221,7 +221,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerBigger
-  m_Speed: 0.5
+  m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6482221326685651206}
@@ -249,7 +249,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerSmaller
-  m_Speed: 0.5
+  m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8152962701886919556}
