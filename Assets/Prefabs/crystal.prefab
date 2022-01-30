@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8660743549573727143}
   m_Layer: 0
   m_Name: Key
-  m_TagString: NegativePlug
+  m_TagString: PositivePlug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1807907424}
   m_Layer: 0
   m_Name: Key_crystal
-  m_TagString: NegativeKey
+  m_TagString: PositiveKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6253298599969034729}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0624, y: -0.0024, z: -0.063}
+  m_LocalPosition: {x: -0.0037, y: -0.0024, z: -0.0832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8660743548890531131}
@@ -316,10 +316,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8660743548890531076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4510064e0425b4f95ddcdaa4ee839f, type: 3}
+  m_Script: {fileID: 11500000, guid: da15e8e622934f849a801d7676c36be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plug: {fileID: 5136569569648949250}
-  key: {fileID: 6253298599969034729}
+  plug: {fileID: 0}
+  key: {fileID: 0}
   keyType: 0
-  speed: 0.1
+  speed: 8
+  plugged: 0

@@ -51,7 +51,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -136,7 +135,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -194,6 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPortal: {fileID: 3281377052183185450}
+  offset: {x: 0, y: 0, z: 0}
+  isGreen: 0
+  isCommon: 0
+  isRed: 0
+  isBlue: 0
 --- !u!1 &3281377052183185450
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +251,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -306,6 +308,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPortal: {fileID: 3281377051711242476}
+  offset: {x: 0, y: 0, z: 0}
+  isGreen: 0
+  isCommon: 0
+  isRed: 0
+  isBlue: 0
 --- !u!1 &3281377053656895748
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +396,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
