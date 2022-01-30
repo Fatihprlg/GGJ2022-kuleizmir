@@ -85,6 +85,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Freeze
       objectReference: {fileID: 0}
+    - target: {fileID: 8705943103268617176, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}
+      propertyPath: m_IsLocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4710988392119909951, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}

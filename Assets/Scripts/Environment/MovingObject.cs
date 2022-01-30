@@ -27,6 +27,11 @@ public class MovingObject : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.GetComponent<Rigidbody>().AddForce(distance * 30, ForceMode.Impulse);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

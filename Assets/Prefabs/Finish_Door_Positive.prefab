@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635968956133150134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 802984440052068040}
   - component: {fileID: 2679180167616663326}
   - component: {fileID: 8654491465520195967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorStone_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5955844840416208063, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: cb62eafb6c7a9d84580d7865f67836a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8126205267198776129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 5075073425998904400}
   - component: {fileID: 5444020623056807804}
   - component: {fileID: 2944157850092635599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5955844840416208063, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: cb62eafb6c7a9d84580d7865f67836a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7076258626802811179}
   - component: {fileID: 7076258626802811176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FinishDoorCol
   m_TagString: PositiveFinish
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7329980885863447519}
   - component: {fileID: 7076258627421785762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Finish_Door_Positive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1309944042438962394}
   - component: {fileID: 177225609625351600}
   - component: {fileID: 1887470553154592934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Doorwall_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2034717843241731589, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: 951db88e7a36d204cb3e4615658bf118, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 3934235064827044313}
   - component: {fileID: 8558845357262458553}
   - component: {fileID: 7175705225299227645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7169760707747854672, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: 9b48c48fec35b2142af36f4a20089b12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 101635073859490662}
   - component: {fileID: 1770812934185086364}
   - component: {fileID: 4220717543017953110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5955844840416208063, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: cb62eafb6c7a9d84580d7865f67836a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 5981671332114148230}
   - component: {fileID: 2720430705257613793}
   - component: {fileID: 8441834283675297698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7169760707747854672, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: 9b48c48fec35b2142af36f4a20089b12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 6589672065520335383}
   - component: {fileID: 4880509038739763852}
   - component: {fileID: 4411524576939800511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorStone_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5955844840416208063, guid: 30ecb79badc8329498492fd876527208, type: 3}
+  - {fileID: 2100000, guid: cb62eafb6c7a9d84580d7865f67836a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -38,7 +38,7 @@ public class Collector : MonoBehaviour
 
             if (other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
             { 
-                other.transform.localPosition = new Vector3(0, .5f, 2);
+                other.transform.localPosition = new Vector3(0, .5f, 1.3f);
                 other.GetComponent<Rigidbody>().isKinematic = true;
             }
             else
