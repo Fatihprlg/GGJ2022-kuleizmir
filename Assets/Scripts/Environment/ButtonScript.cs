@@ -25,21 +25,21 @@ public class ButtonScript : MonoBehaviour
         removed = false;
         if (isHeavy)
         {
-            if (other.CompareTag("Interactable"))
+            if (other.CompareTag("Interactable") || other.CompareTag("Portable"))
             {
                 isPushedDown = true;
             }
         }
         else if (isNormal)
         {
-            if(other.CompareTag("Player")|| other.CompareTag("Interactable") || other.CompareTag("Player1"))
+            if(other.CompareTag("Player")|| other.CompareTag("Interactable") || other.CompareTag("Portable") || other.CompareTag("Player1"))
             {
                 isPushedDown = true;
             }
         }
         else if (isLight)
         {
-            if (other.CompareTag("Player") ||  other.CompareTag("Interactable") || other.CompareTag("Player1"))
+            if (other.CompareTag("Player") ||  other.CompareTag("Interactable") || other.CompareTag("Portable") || other.CompareTag("Player1"))
             {
                 isPushedDown = true;
             }
@@ -51,14 +51,14 @@ public class ButtonScript : MonoBehaviour
         removed = true;
         if (isHeavy)
         {
-            if (other.CompareTag("Interactable"))
+            if (other.CompareTag("Interactable") || other.CompareTag("Portable"))
             {
                 isPushedDown = false;
             }
         }
         else if (isNormal)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Interactable") || other.CompareTag("Player1"))
+            if (other.CompareTag("Player") || other.CompareTag("Interactable") || other.CompareTag("Portable") || other.CompareTag("Player1"))
             {
                 isPushedDown = false;
             }

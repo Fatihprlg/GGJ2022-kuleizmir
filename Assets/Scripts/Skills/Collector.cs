@@ -34,7 +34,8 @@ public class Collector : MonoBehaviour
         {
             Debug.Log(player);
             other.transform.parent = transform;
-
+            if (other.GetComponent<Rigidbody>())
+                other.GetComponent<Rigidbody>().isKinematic = true;
 
             if (other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
             { 
@@ -49,6 +50,8 @@ public class Collector : MonoBehaviour
         {
             //other.transform.parent.SetParent(null);
             transform.DetachChildren();
+            if (other.GetComponent<Rigidbody>())
+                other.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }
