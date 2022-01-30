@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4900838669420659081}
   - component: {fileID: 4900838669420659082}
   - component: {fileID: 4900838669420659083}
-  - component: {fileID: 4900838669420659092}
+  - component: {fileID: 6653353949161685402}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -31,6 +31,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.49, y: 0.03, z: -0.67}
   m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -113,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4900838669420659092
+--- !u!114 &6653353949161685402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +124,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4900838669420659093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80915462dbfa49419005c0472195ba4, type: 3}
+  m_Script: {fileID: 11500000, guid: da79eb703ad7d174ea0b7d081329ab81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isHeavy: 0
   isNormal: 0
-  isLight: 1
+  isLight: 0
   isPushedDown: 0
+  Object: {fileID: 0}
+  movePosition: {x: 0, y: 0, z: 0}
+  speed: 4
