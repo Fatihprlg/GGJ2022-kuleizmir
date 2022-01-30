@@ -40,6 +40,7 @@ public class Collector : MonoBehaviour
             { 
                 other.transform.localPosition = new Vector3(0, .5f, 1.3f);
                 other.GetComponent<Rigidbody>().isKinematic = true;
+                other.GetComponent<MeshCollider>().convex = false;
             }
             else
                 other.transform.localPosition = new Vector3(0, 0, 1);
