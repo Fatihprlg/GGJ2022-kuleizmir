@@ -16,9 +16,12 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] float speed = 4;
     Vector3 firstPos;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
         firstPos = Object.transform.position;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
         removed = false;
         if (isHeavy)
         {
