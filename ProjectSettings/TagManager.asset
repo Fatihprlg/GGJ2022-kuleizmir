@@ -20,6 +20,9 @@ TagManager:
   - PositiveKey
   - PositivePlug
   - KillBox
+  - PositiveFinish
+  - NegativeFinish
+  - Destroyable
   layers:
   - Default
   - TransparentFX
