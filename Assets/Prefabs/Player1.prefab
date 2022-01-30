@@ -206,7 +206,7 @@ MonoBehaviour:
   minScale: {x: 0.25, y: 0.25, z: 0.25}
   maxScale: {x: 0.6, y: 0.6, z: 0.6}
   movementSpeed: 4
-  FreezeArea: {fileID: 3560896264419105025, guid: 5e27cbf6d751b0a40a37cbeec65bb6a3, type: 3}
+  FreezeArea: {fileID: 4678451651013175391, guid: 1d1ade029489397489b9825a7eca3778, type: 3}
 --- !u!95 &8705771191604314566
 Animator:
   serializedVersion: 3

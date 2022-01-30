@@ -150,7 +150,7 @@ MonoBehaviour:
   minScale: {x: 0.25, y: 0.25, z: 0.25}
   maxScale: {x: 0.6, y: 0.6, z: 0.6}
   movementSpeed: 4
-  ExplosionArea: {fileID: 4822024993072603374, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}
+  ExplosionArea: {fileID: 0}
 --- !u!1 &6519640362395468948
 GameObject:
   m_ObjectHideFlags: 0

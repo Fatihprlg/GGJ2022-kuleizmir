@@ -18,9 +18,8 @@ public class Explosion : MonoBehaviour
         if (transform.localScale.x < maxSize)
         {
             transform.localScale += new Vector3(0.3f, 0, 0.3f) * Time.deltaTime;
-            
         }
-        if (ExplosionCol.radius <= 5f)
+        if (ExplosionCol.radius <= 4f)
         {
             ExplosionCol.radius += .01f;
         }
@@ -32,7 +31,7 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Destroyable"))
         {
             GameObject box = other.gameObject;
             DestroyableObjects.Add(box);
@@ -43,17 +42,18 @@ public class Explosion : MonoBehaviour
     {
         foreach(GameObject destroyablebox in DestroyableObjects)
         {
-            if (ExplosionCol.radius < 5f)
+            if (ExplosionCol.radius < 2f && destroyablebox.GetComponent<Rigidbody>().mass <= 1)
             {
                 destroyablebox.transform.DetachChildren();
                 Destroy(destroyablebox);
             }
-            else if (ExplosionCol.radius >= 5f)
+            else if (ExplosionCol.radius >= 2f)
             {
                 if (destroyablebox.GetComponent<Rigidbody>().mass > 1 && destroyablebox.GetComponent<Rigidbody>().constraints == RigidbodyConstraints.FreezeAll)
                 {
+                    destroyablebox.GetComponent<Rigidbody>().isKinematic = false;
                     destroyablebox.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(300, transform.position, 5, 3.0f, ForceMode.Force);
+                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(1000, transform.position, 5, 3.0f, ForceMode.Force);
                 }
                 else return;
                 Destroy(destroyablebox, 3f);

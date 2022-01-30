@@ -16,9 +16,10 @@ public class Player2Controller : MonoBehaviour
 
     Animator animator;
     Rigidbody rb;
+    
 
     public GameObject ExplosionArea;
-    GameObject Freeze;
+    GameObject Explosion;
     // Start is called before the first frame update
     void Awake()
     {
@@ -96,12 +97,12 @@ public class Player2Controller : MonoBehaviour
     void spawnExplosion()
     {
         canMove = false;
-        GameObject Explosion = Instantiate(ExplosionArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
-        Explosion.transform.parent = transform;
+         Explosion = Instantiate(ExplosionArea, transform.position - new Vector3(0, .25f, 0), Quaternion.identity);
+        //Explosion.transform.parent = transform;
     }
     void destroyExplosion()
     {
-        Destroy(transform.GetChild(1).gameObject);
+        Destroy(Explosion);
         //GameObject.FindGameObjectWithTag("Explosion").GetComponent<Explosion>().Destroyed = true;
         canMove = true;
     }

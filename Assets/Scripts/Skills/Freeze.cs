@@ -33,7 +33,7 @@ public class Freeze : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable") || other.CompareTag("Freezable"))
+        if (other.CompareTag("Interactable") || other.CompareTag("Freezable") || other.CompareTag("Destroyable"))
         {
             GameObject box = other.gameObject;
             Freezable.Add(box);
