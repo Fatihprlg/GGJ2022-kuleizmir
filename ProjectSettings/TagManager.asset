@@ -23,6 +23,8 @@ TagManager:
   - PositiveFinish
   - NegativeFinish
   - Destroyable
+  - FxTemporaire
+  - Frost
   layers:
   - Default
   - TransparentFX

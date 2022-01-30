@@ -40,7 +40,7 @@ public class Explosion : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach(GameObject destroyablebox in DestroyableObjects)
+        foreach (GameObject destroyablebox in DestroyableObjects)
         {
             if (ExplosionCol.radius < 2f && destroyablebox.GetComponent<Rigidbody>().mass <= 1)
             {
@@ -51,9 +51,10 @@ public class Explosion : MonoBehaviour
             {
                 if (destroyablebox.GetComponent<Rigidbody>().mass > 1 && destroyablebox.GetComponent<Rigidbody>().constraints == RigidbodyConstraints.FreezeAll)
                 {
+                    destroyablebox.transform.parent.GetComponent<BoxCollider>().isTrigger = true;
                     destroyablebox.GetComponent<Rigidbody>().isKinematic = false;
                     destroyablebox.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(1000, transform.position, 5, 3.0f, ForceMode.Force);
+                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(1500, transform.position, 5, 3.0f, ForceMode.Force);
                 }
                 else return;
                 Destroy(destroyablebox, 3f);

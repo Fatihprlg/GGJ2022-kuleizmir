@@ -8,11 +8,12 @@ public class Freeze : MonoBehaviour
     public bool Destroyed = false;
     public float maxSize = 0.4f;
     List<GameObject> Freezable = new List<GameObject>();
-
-
+    public GameObject frostEffect;
+    public static GameObject frost;
     private void Awake()
     {
         FreezeCol = GetComponent<SphereCollider>();
+        frost = frostEffect;
     }
     void Update()
     {
@@ -54,10 +55,6 @@ public class Freeze : MonoBehaviour
         }
     }
 
-/*    public void DestroyObject()
-    {
-        StartCoroutine(FreezeObject(Freezable));
-    }*/
 
     
 }

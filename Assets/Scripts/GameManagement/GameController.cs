@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     }
 
+   
+
     private void Update()
     {
         if (keys[1].plugged && keys[0].plugged)
@@ -37,7 +39,8 @@ public class GameController : MonoBehaviour
     {
         negativeDoorAnimator.SetBool("CloseDoor", true);
         positiveDoorAnimator.SetBool("CloseDoor", true);
-        
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        negativeIsFinished = false;
+        positiveIsFinished = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

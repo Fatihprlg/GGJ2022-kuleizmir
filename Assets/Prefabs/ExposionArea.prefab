@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destroyed: 0
   maxSize: 0.4
+  explosionEffect: {fileID: 100002, guid: 6890a03af913b874092fbb1e8337747d, type: 3}
 --- !u!1818360610 &8705943103268617176
 ScaleConstraint:
   m_ObjectHideFlags: 0

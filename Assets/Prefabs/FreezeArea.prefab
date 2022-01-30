@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destroyed: 0
   maxSize: 0.2
+  frostEffect: {fileID: 7384361920263516033, guid: 2a68d8fd6e322ee4681a18a50bedfcd6, type: 3}
 --- !u!1001 &145932491539024049
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1585,10 +1585,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8705771191604314567, guid: 6be82e365152ba142aba9f945e1b2ee1, type: 3}
-      propertyPath: FreezeArea
-      value: 
-      objectReference: {fileID: 4678451651013175391, guid: 1d1ade029489397489b9825a7eca3778, type: 3}
     - target: {fileID: 8705771191604314616, guid: 6be82e365152ba142aba9f945e1b2ee1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2236,10 +2232,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8120857508291704227, guid: 0c60a152cdfefba4f9481f540c35d848, type: 3}
-      propertyPath: ExplosionArea
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2498220828819074562, guid: 0c60a152cdfefba4f9481f540c35d848, type: 3}
       propertyPath: m_RootOrder
       value: 5
