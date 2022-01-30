@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3560896264419105025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f030c28072ef64881cd7803ab68c97, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b438e2f6187002429f5bda951e1af72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destroyed: 0
@@ -84,6 +84,10 @@ PrefabInstance:
     - target: {fileID: 4822024993072603374, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}
       propertyPath: m_TagString
       value: Freeze
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705943103268617176, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}
+      propertyPath: m_IsLocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4710988392119909951, guid: 0b7b24eb59d4cfe45af97154fcdb94bf, type: 3}

@@ -53,25 +53,6 @@ public class Player1Controller : MonoBehaviour
             Movement();
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("KillBox"))
-        {
-            Death();
-        }
-        if (other.CompareTag("Portal"))
-        {
-            StartCoroutine(PortalTeleportTime());
-        }
-
-        if (other.CompareTag("NegativeFinish"))
-        {
-            Debug.Log("negative gone");
-            GameController.negativeIsFinished = true;
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (!isTeleporting)
@@ -87,7 +68,24 @@ public class Player1Controller : MonoBehaviour
                 animator.SetBool("Bigger", true);
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("KillBox"))
+        {
+            Death();
+        }
+        if (other.CompareTag("Portal"))
+        {
+            StartCoroutine(PortalTeleportTime());
+        }
+       
+        if (other.CompareTag("NegativeFinish"))
+        {
+            Debug.Log("negative gone");
+            GameController.negativeIsFinished = true;
+        }
     }
 
     void Movement()

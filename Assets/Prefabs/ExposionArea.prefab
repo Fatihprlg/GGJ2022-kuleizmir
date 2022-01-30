@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 512760706267903745}
   - component: {fileID: 645312076200316768}
   - component: {fileID: -4710988392119909951}
+  - component: {fileID: 8705943103268617176}
   m_Layer: 0
   m_Name: ExposionArea
   m_TagString: Explosion
@@ -106,8 +107,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4822024993072603374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458c83cf792784a449926c912c54b5cf, type: 3}
+  m_Script: {fileID: 11500000, guid: b0c9beb70e766564c96e1d28aea81be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destroyed: 0
   maxSize: 0.8
+--- !u!1818360610 &8705943103268617176
+ScaleConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822024993072603374}
+  m_Enabled: 1
+  m_Weight: 1
+  m_ScaleAtRest: {x: 0.1, y: 0.1, z: 0.1}
+  m_ScaleOffset: {x: 1, y: 1, z: 1}
+  m_AffectScalingX: 1
+  m_AffectScalingY: 1
+  m_AffectScalingZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []

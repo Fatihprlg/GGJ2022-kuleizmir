@@ -49,6 +49,23 @@ public class Player2Controller : MonoBehaviour
         if (canMove)
             Movement();
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (!isTeleporting)
+        {
+            if (other.CompareTag("NegativeSide"))
+            {
+                animator.SetBool("Smaller", true);
+                animator.SetBool("Bigger", false);
+            }
+            else if (other.CompareTag("PositiveSide"))
+            {
+
+                animator.SetBool("Smaller", false);
+                animator.SetBool("Bigger", true);
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -58,24 +75,9 @@ public class Player2Controller : MonoBehaviour
         }
         if (other.CompareTag("Portal"))
         {
-            isTeleporting = true;
+            StartCoroutine(PortalTeleportTime());
         }
-        if (!isTeleporting)
-        {
-            if (other.CompareTag("NegativeSide"))
-            {
-
-                animator.SetBool("Smaller", true);
-                animator.SetBool("Bigger", false);
-
-            }
-            else if (other.CompareTag("PositiveSide"))
-            {
-
-                animator.SetBool("Smaller", false);
-                animator.SetBool("Bigger", true);
-            }
-        }
+        
         if (other.CompareTag("PositiveFinish"))
         {
             Debug.Log("positivegone gone");
@@ -107,5 +109,11 @@ public class Player2Controller : MonoBehaviour
     {
         GameObject.Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    IEnumerator PortalTeleportTime()
+    {
+        isTeleporting = true;
+        yield return new WaitForSeconds(0.2f);
+        isTeleporting = false;
     }
 }
