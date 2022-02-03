@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3626319152157470580}
   m_Layer: 0
   m_Name: MovingCube (1)
-  m_TagString: Portable
+  m_TagString: Freezable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

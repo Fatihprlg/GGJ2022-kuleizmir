@@ -9,7 +9,7 @@ public class FrostObject : MonoBehaviour
 
     void Awake()
     {
-        frostEffect = GameObject.FindGameObjectWithTag("Frost");
+        //frostEffect = GameObject.FindGameObjectWithTag("Frost");
         frostEffect = Freeze.frost;
         StartCoroutine(FreezeObject());
     }

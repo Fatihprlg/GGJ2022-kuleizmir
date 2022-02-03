@@ -99,6 +99,7 @@ public class Player1Controller : MonoBehaviour
     {
         canMove = false;
         Freeze = Instantiate(FreezeArea, transform.position + new Vector3(0, .2f, 0), Quaternion.identity);
+       
         //Freeze.transform.parent = transform;
     }
     void destroyFreeze()

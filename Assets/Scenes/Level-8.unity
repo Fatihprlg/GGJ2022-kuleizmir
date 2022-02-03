@@ -1265,6 +1265,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5861564828444806819, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isBlue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861564828444806819, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isGreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861564828444806819, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isCommon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861564829046736485, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isBlue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861564829046736485, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isGreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861564829046736485, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: isCommon
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
 --- !u!1 &1133547894 stripped
@@ -1379,7 +1403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8660743550117007306, guid: a8744f33fbd8742498151e96ff9113bd, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204123034293895370, guid: a8744f33fbd8742498151e96ff9113bd, type: 3}
       propertyPath: m_RootOrder
@@ -1945,7 +1969,7 @@ GameObject:
   - component: {fileID: 1787725992}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Interactable
+  m_TagString: Portable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

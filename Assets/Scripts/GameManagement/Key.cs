@@ -22,6 +22,7 @@ public class Key : MonoBehaviour
                     Debug.LogError(plug.transform.position);
                     key.transform.SetParent(plug.transform.parent);
                     key.GetComponent<MeshCollider>().enabled = false;
+                    key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                     isGoing = true;
                     
                 }
@@ -33,6 +34,7 @@ public class Key : MonoBehaviour
                     Debug.LogError(plug.transform.position);
                     key.transform.SetParent(plug.transform.parent);
                     key.GetComponent<MeshCollider>().enabled = false;
+                    key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                     isGoing = true;
                 }
             }

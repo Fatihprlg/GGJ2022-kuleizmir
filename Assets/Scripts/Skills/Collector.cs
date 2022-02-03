@@ -30,29 +30,33 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (take && (other.CompareTag("Portable") || other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey")) && transform.childCount == 0)
+        if (other.CompareTag("Portable") || other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
         {
-            Debug.Log(player);
-            other.transform.parent = transform;
-            if (other.GetComponent<Rigidbody>())
-                other.GetComponent<Rigidbody>().isKinematic = true;
+            if (take && transform.childCount == 0)
+            {
+                Debug.Log(player);
+                other.transform.parent = transform;
+                if (other.GetComponent<Rigidbody>())
+                    other.GetComponent<Rigidbody>().isKinematic = true;
 
-            if (other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
-            { 
-                other.transform.localPosition = new Vector3(0, .5f, 1.3f);
-                other.GetComponent<Rigidbody>().isKinematic = true;
-                other.GetComponent<MeshCollider>().convex = false;
+                if (other.CompareTag(player == Players.Player1 ? "NegativeKey" : "PositiveKey"))
+                {
+                    other.transform.localPosition = new Vector3(0, .5f, 1.3f);
+                    other.GetComponent<Rigidbody>().isKinematic = true;
+                    //other.GetComponent<MeshCollider>().convex = false;
+                }
+                else
+                    other.transform.localPosition = new Vector3(0, 0, 1);
             }
-            else
-                other.transform.localPosition = new Vector3(0, 0, 1);
+            else if (!take)
+            {
+                //other.transform.parent.SetParent(null);
+                transform.DetachChildren();
+                if (other.GetComponent<Rigidbody>())
+                    other.GetComponent<Rigidbody>().isKinematic = false;
+            }
         }
-        else if (!take)
-        {
-            //other.transform.parent.SetParent(null);
-            transform.DetachChildren();
-            if (other.GetComponent<Rigidbody>())
-                other.GetComponent<Rigidbody>().isKinematic = false;
-        }
+        
     }
 }
 

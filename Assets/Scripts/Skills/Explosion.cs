@@ -54,7 +54,7 @@ public class Explosion : MonoBehaviour
                     destroyablebox.transform.parent.GetComponent<BoxCollider>().isTrigger = true;
                     destroyablebox.GetComponent<Rigidbody>().isKinematic = false;
                     destroyablebox.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(1500, transform.position, 5, 3.0f, ForceMode.Force);
+                    destroyablebox.GetComponent<Rigidbody>().AddExplosionForce(2500, transform.position, 5, 3.0f, ForceMode.Force);
                 }
                 else return;
                 Destroy(destroyablebox, 3f);

@@ -164,6 +164,17 @@
                 },
                 {
                     "name": "",
+                    "id": "182b84c6-1b8b-4c35-9cb1-50c3844588ee",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "97bbd3e3-5115-4acd-ad40-b131ddcd1090",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
