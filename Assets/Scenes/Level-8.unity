@@ -733,8 +733,24 @@ PrefabInstance:
       value: DestroyableWall
       objectReference: {fileID: 0}
     - target: {fileID: 5229644900797483877, guid: 21af452494f6d334884eed2e39914041, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6023052
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229644900797483877, guid: 21af452494f6d334884eed2e39914041, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2709838
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229644900797483877, guid: 21af452494f6d334884eed2e39914041, type: 3}
+      propertyPath: m_Center.x
+      value: 1.86683
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229644900797483877, guid: 21af452494f6d334884eed2e39914041, type: 3}
+      propertyPath: m_Center.y
+      value: 0.25358313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229644900797483877, guid: 21af452494f6d334884eed2e39914041, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21af452494f6d334884eed2e39914041, type: 3}

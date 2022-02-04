@@ -679,6 +679,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Size.x
+      value: 0.043610647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00024335482
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Center.y
+      value: -1.5528765e-19
+      objectReference: {fileID: 0}
     - target: {fileID: 6215585471158051107, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
       propertyPath: m_Name
       value: FireWall (4)
@@ -1169,6 +1181,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7483467182214901710, guid: 201e80cb2cb12084b96a223a7958fcb8, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7718030741453994612, guid: 201e80cb2cb12084b96a223a7958fcb8, type: 3}
       propertyPath: m_Name
       value: crystalRed
@@ -1556,6 +1572,10 @@ PrefabInstance:
       propertyPath: isCommon
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5861564828444806823, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5861564829046736485, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
       propertyPath: isBlue
       value: 0
@@ -1566,11 +1586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861564829046736489, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.64
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 5861564829046736489, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.65
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 5861564829046736491, guid: 719d4c506653dc845851f53c4adf11a9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1833,6 +1853,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Size.x
+      value: 0.043110877
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00049323833
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152920427268414638, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
+      propertyPath: m_Center.y
+      value: -2.6708545e-19
+      objectReference: {fileID: 0}
     - target: {fileID: 6215585471158051107, guid: 3ef68b749c9349e4495e2f0f1afb1338, type: 3}
       propertyPath: m_Name
       value: FireWall (5)
