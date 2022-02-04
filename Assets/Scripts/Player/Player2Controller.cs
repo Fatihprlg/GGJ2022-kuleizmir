@@ -83,6 +83,7 @@ public class Player2Controller : MonoBehaviour
         {
             Debug.Log("positivegone gone");
             GameController.positiveIsFinished = true;
+            gameObject.SetActive(false);
         }
     }
 

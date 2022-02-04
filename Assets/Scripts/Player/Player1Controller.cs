@@ -85,6 +85,7 @@ public class Player1Controller : MonoBehaviour
         {
             Debug.Log("negative gone");
             GameController.negativeIsFinished = true;
+            gameObject.SetActive(false);
         }
     }
 
