@@ -7,7 +7,7 @@ public class Collector : MonoBehaviour
    
     public Players player;
     PlayerControls playerInputs;
-    public static bool take = false;
+    public bool take = false;
 
 
     private void Awake()

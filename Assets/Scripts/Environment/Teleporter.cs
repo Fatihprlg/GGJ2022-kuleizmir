@@ -11,9 +11,11 @@ public class Teleporter : MonoBehaviour
     public bool isCommon;
     public bool isRed;
     public bool isBlue;
+    Collector collector;
 
     private void OnTriggerEnter(Collider other)
     {
+        collector = other.transform.GetChild(0).GetComponent<Collector>();
         if (isCommon)
         {
             //player = other.GetComponent<Player1Controller>();
@@ -21,8 +23,10 @@ public class Teleporter : MonoBehaviour
             {
                 if (isGreen)
                 {
+                    //Debug.Log("collector: " + collector.tag);
                     other.transform.GetChild(0).DetachChildren();
-                    Collector.take = false;
+                    if(collector != null)
+                        collector.take = false;
                 }
                 other.transform.position = otherPortal.transform.position + offset;
                 StartCoroutine(PortalWaitTime());
@@ -37,7 +41,8 @@ public class Teleporter : MonoBehaviour
                 if (isGreen)
                 {
                     other.transform.GetChild(0).DetachChildren();
-                    Collector.take = false;
+                    if (collector != null)
+                        collector.take = false;
                 }
                 other.transform.position = otherPortal.transform.position + offset;
                 StartCoroutine(PortalWaitTime());
@@ -52,7 +57,8 @@ public class Teleporter : MonoBehaviour
                 if (isGreen)
                 {
                     other.transform.GetChild(0).DetachChildren();
-                    Collector.take = false;
+                    if (collector != null)
+                        collector.take = false;
                 }
                 other.transform.position = otherPortal.transform.position + offset;
                 StartCoroutine(PortalWaitTime());
