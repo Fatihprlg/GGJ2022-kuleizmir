@@ -20,6 +20,9 @@ You can simply install with setup file that is in Setup/ folder.
 ## Team
 
 Muhammet Ali Parlağı - 3D Artist
+
 Burak Şahingöz - Level Designer
+
 Ahmet Orkun Yazıcıoğlu - Game Developer
+
 And me - Game Developer
